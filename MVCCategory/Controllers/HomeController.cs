@@ -8,9 +8,9 @@ using MVCCategory.Models;
 
 namespace MVCCategory.Controllers
 {
-    public class HomeController : Controller
+    public partial class HomeController : Controller
     {
-        public ActionResult Index()
+        public virtual ActionResult Index()
         {
             var context = new CategoryDbContext();
             var m = new IndexVM();
@@ -19,14 +19,14 @@ namespace MVCCategory.Controllers
             return View(m);
         }
 
-        public ActionResult About()
+        public virtual ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
 
             return View();
         }
 
-        public ActionResult Contact()
+        public virtual ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
 
