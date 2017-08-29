@@ -10,7 +10,7 @@ namespace MVCCategory.Controllers
 {
     public partial class HomeController : Controller
     {
-        public virtual ActionResult Index()
+        public virtual ActionResult Inde2x()
         {
             var context = new CategoryDbContext();
             var m = new IndexVM();
