@@ -10,7 +10,7 @@ namespace MVCCategory.Controllers
 {
     public partial class HomeController : Controller
     {
-        public virtual ActionResult Inde2x()
+        public virtual ActionResult Index()
         {
             var context = new CategoryDbContext();
             var m = new IndexVM();
@@ -31,6 +31,14 @@ namespace MVCCategory.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        public virtual ActionResult TestTrykMig(string test)
+        {
+            ViewBag.MessageCiick = "Klikkede her og udfyldte følgende: " + test;
+
+
+            return View("Contact");
         }
     }
 }

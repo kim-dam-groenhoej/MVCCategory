@@ -4,10 +4,19 @@
 <h2>@ViewBag.Title.</h2>
 <h3>@ViewBag.Message</h3>
 
-@using (Html.BeginForm(MVC.Home.Inde2x(), FormMethod.Post))
+
+@using (Html.BeginForm(MVC.Home.TestTrykMig(null), FormMethod.Post))
 {
-    
+    <label>
+        Tekst
+    </label>
+    <input type="text" name="test"/>
+    <button>Tryk mig</button>
 }
+
+<span>
+    @ViewBag.MessageCiick
+</span>
 
 <address>
     One Microsoft Way<br />
