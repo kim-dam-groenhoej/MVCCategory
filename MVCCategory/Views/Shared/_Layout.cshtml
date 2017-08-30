@@ -1,4 +1,12 @@
-﻿<!DOCTYPE html>
+﻿@{
+
+    var loginVIewModel = new MVCCategory.ViewModels.LoginViewModel()
+    {
+        TItle = "test"
+    };
+}
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -26,6 +34,7 @@
                     <li>@Html.ActionLink("Contact", MVC.Home.Contact())</li>
                 </ul>
             </div>
+            
         </div>
     </div>
     <div class="container body-content">

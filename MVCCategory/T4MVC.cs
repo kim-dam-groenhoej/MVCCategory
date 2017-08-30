@@ -27,6 +27,7 @@ using T4MVC;
 [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
 public static partial class MVC
 {
+    public static MVCCategory.Controllers.CategoryController Category = new MVCCategory.Controllers.T4MVC_CategoryController();
     public static MVCCategory.Controllers.HomeController Home = new MVCCategory.Controllers.T4MVC_HomeController();
     public static T4MVC.SharedController Shared = new T4MVC.SharedController();
 }

@@ -1,0 +1,48 @@
+﻿@model MVCCategory.ViewModels.CategoryVM
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<div class="categories">
+    
+    <select id="mainCategory">
+        @foreach (var item in Model.RootCategories)
+        {
+            <option value="@item.Id">@item.Name</option>
+        }
+    </select>
+    
+    <select id="SubCategory">
+        
+    </select>
+</div>
+
+@section scripts {
+    
+    <script>
+
+        // Vi tager elemenet "mainCategory" og laver et event
+        // som fortæller dette kodee inde i function skal udføres når der er valgt noget i dropdown
+        $("#mainCategory").change(function () {
+            var parentID = $(this).val();
+            $.ajax({
+                url: '/Category/GetCategories/' + parentID,
+                success: function(categories) {
+
+                    if (categories != null) {
+
+                        $.each(categories, function() {
+                            
+                        })
+
+                    }
+
+                }
+            });
+
+        });
+
+    </script>
+}

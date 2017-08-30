@@ -14,7 +14,14 @@ namespace MVCCategory.Controllers
         {
             var context = new CategoryDbContext();
             var m = new IndexVM();
+            m.NewsletterVM = new NewsletterVM();
+            m.LoginViewModel = new LoginViewModel()
+            {
+                TItle = "test"
+            };
             m.RootCategories = context.Categories.Where(c => !c.ParentCategoryId.HasValue).ToList();
+
+
 
             return View(m);
         }

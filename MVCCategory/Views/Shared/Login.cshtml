@@ -1,0 +1,23 @@
+﻿@model MVCCategory.ViewModels.LoginViewModel
+
+
+<h2>@Model.TItle</h2>
+
+@if (User.Identity.IsAuthenticated)
+{
+    <span>
+        Du er logget ind
+    </span>
+}
+else
+{
+    <div>
+        @Html.DisplayFor(m => m.Username)
+        @Html.EditorFor(m => m.Username)
+    </div>
+   
+    <div>
+        @Html.DisplayFor(m => m.Password)
+        @Html.EditorFor(m => m.Password)
+    </div>
+}

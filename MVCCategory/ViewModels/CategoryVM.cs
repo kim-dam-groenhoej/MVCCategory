@@ -6,10 +6,8 @@ using MVCCategory.Models;
 
 namespace MVCCategory.ViewModels
 {
-    public class IndexVM
+    public class CategoryVM
     {
-        public NewsletterVM NewsletterVM { get; set; }
-        public LoginViewModel LoginViewModel { get; set; }
         public List<Category> RootCategories { get; set; }
     }
 }
