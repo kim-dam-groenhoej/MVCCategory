@@ -22,20 +22,24 @@
 @section scripts {
     
     <script>
+        var subCategory = $("#SubCategory");
 
         // Vi tager elemenet "mainCategory" og laver et event
         // som fortæller dette kodee inde i function skal udføres når der er valgt noget i dropdown
         $("#mainCategory").change(function () {
             var parentID = $(this).val();
+            subCategory.html(""); // clear the option
+
             $.ajax({
                 url: '/Category/GetCategories/' + parentID,
                 success: function(categories) {
-
+                    
                     if (categories != null) {
 
-                        $.each(categories, function() {
+                        $.each(categories, function (index, categoryItem) {
                             
-                        })
+                            subCategory.append("<option value='" + categoryItem.Id + "'>" + categoryItem.Name + "</option>");
+                        });
 
                     }
 

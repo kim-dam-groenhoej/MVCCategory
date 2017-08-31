@@ -21,8 +21,6 @@ namespace MVCCategory.Controllers
             };
             m.RootCategories = context.Categories.Where(c => !c.ParentCategoryId.HasValue).ToList();
 
-
-
             return View(m);
         }
 
