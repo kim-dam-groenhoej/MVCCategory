@@ -8,6 +8,10 @@ namespace MVCCategory.ViewModels
 {
     public class CategoryVM
     {
+        public Category Category { get; set; }
+
+        public List<Category> Categories { get; set; }
+
         public List<Category> RootCategories { get; set; }
     }
 }

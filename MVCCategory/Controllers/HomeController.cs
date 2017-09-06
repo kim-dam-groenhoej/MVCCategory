@@ -24,8 +24,21 @@ namespace MVCCategory.Controllers
             return View(m);
         }
 
+        public virtual ActionResult Category()
+        {
+            var vm = new CategoryVM();
+            var context = new CategoryDbContext();
+
+            var categoryModels = context.Categories.ToList();
+            vm.Categories = categoryModels;
+
+            return View(vm);
+        }
+
         public virtual ActionResult About()
         {
+
+
             ViewBag.Message = "Your application description page.";
 
             return View();

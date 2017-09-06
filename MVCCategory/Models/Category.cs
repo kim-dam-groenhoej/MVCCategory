@@ -28,5 +28,7 @@ namespace MVCCategory.Models
                 return context.Categories.Where(c => c.ParentCategoryId == this.Id);
             }
         }
+
+        public virtual ICollection<Product> Products { get; set; }
     }
 }

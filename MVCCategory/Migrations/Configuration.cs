@@ -9,7 +9,7 @@ namespace MVCCategory.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(MVCCategory.Models.CategoryDbContext context)

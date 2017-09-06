@@ -1,0 +1,26 @@
+﻿@model MVCCategory.ViewModels.CategoryVM
+@{
+    ViewBag.Title = "Category";
+}
+
+<h2>Produkter</h2>
+
+@foreach (var mainCategory in Model.Categories.Where(c => c.ParentCategoryId == null))
+{
+    <h2>
+        @mainCategory.Name
+    </h2>
+
+    foreach (var childCategory in mainCategory.Children)
+    {
+        foreach (var product in childCategory.Products)
+        {
+            <div>
+                <strong>Name</strong>
+                @product.Name
+            </div>
+        }
+    }
+
+    <hr/>
+}

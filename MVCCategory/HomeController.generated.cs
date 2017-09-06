@@ -82,6 +82,7 @@ namespace MVCCategory.Controllers
         public class ActionNamesClass
         {
             public readonly string Index = "Index";
+            public readonly string Category = "Category";
             public readonly string About = "About";
             public readonly string Contact = "Contact";
             public readonly string TestTrykMig = "TestTrykMig";
@@ -91,6 +92,7 @@ namespace MVCCategory.Controllers
         public class ActionNameConstants
         {
             public const string Index = "Index";
+            public const string Category = "Category";
             public const string About = "About";
             public const string Contact = "Contact";
             public const string TestTrykMig = "TestTrykMig";
@@ -116,10 +118,12 @@ namespace MVCCategory.Controllers
             public class _ViewNamesClass
             {
                 public readonly string About = "About";
+                public readonly string Category = "Category";
                 public readonly string Contact = "Contact";
                 public readonly string Index = "Index";
             }
             public readonly string About = "~/Views/Home/About.cshtml";
+            public readonly string Category = "~/Views/Home/Category.cshtml";
             public readonly string Contact = "~/Views/Home/Contact.cshtml";
             public readonly string Index = "~/Views/Home/Index.cshtml";
         }
@@ -138,6 +142,17 @@ namespace MVCCategory.Controllers
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Index);
             IndexOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void CategoryOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult Category()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Category);
+            CategoryOverride(callInfo);
             return callInfo;
         }
 
